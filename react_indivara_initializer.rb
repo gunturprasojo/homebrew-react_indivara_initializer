@@ -7,18 +7,15 @@ class ReactIndivaraInitializer < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install "react_indivara"
-    bin.install "react_indivara_project"
-    bin.install "react_indivara_page"
+    bin.install libexec/"bin/react_indivara"
+    bin.install libexec/"bin/react_indivara_project"
+    bin.install libexec/"bin/react_indivara_page"
 
-    # Rewrite each bin script to point to libexec
-    bin.find.each do |path|
-      next unless path.file? && path.executable?
-
-      script_name = path.basename
-      (bin/script_name).write <<~EOS
+    # Rewrite bin scripts to run from libexec
+    %w[react_indivara react_indivara_project react_indivara_page].each do |script|
+      (bin/script).write <<~EOS
         #!/bin/bash
-        exec ruby "#{libexec}/#{script_name}" "$@"
+        exec ruby "#{libexec}/bin/#{script}" "$@"
       EOS
     end
   end
