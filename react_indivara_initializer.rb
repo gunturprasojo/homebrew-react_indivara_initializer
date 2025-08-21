@@ -1,8 +1,8 @@
 class ReactIndivaraInitializer < Formula
   desc "React Generator for Indivara Project"
   homepage "https://www.indivaragroup.com"
-  url "https://github.com/gunturprasojo/react_indivara_initializer/archive/refs/tags/v1.1.0.tar.gz"
-  sha256 "5516abac7cf0908eff7ad4dd0184ff6c21028a8e9af5bc717a18d746d44bccc1"
+  url "https://github.com/gunturprasojo/react_indivara_initializer/archive/refs/tags/v1.1.1.tar.gz"
+  sha256 "5d941355d666f332542e6931c4cc55a930adb858f6f9606228a373c5cbb4b56f"
   license "MIT"
 
   def install
